@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedora - AI Wedding Planner</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fffaf7;
+  color: #45352f;
+}
+
+header {
+  background: #6e394b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+header p {
+  margin-top: 8px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 16px;
+  background: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: #8b4b60;
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 390px;
+  background: linear-gradient(#0005,#0006),
+  url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1400")
+  center/cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.hero h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #9d586d;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #70394c;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 35px 18px;
+}
+
+.heading {
+  text-align: center;
+  color: #874b60;
+  font-family: Georgia, serif;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 14px #e8d9d5;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d9bfc4;
+  border-radius: 6px;
+  margin-top: 8px;
+  background: white;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.full {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+  gap: 18px;
+}
+
+.theme {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px #eadbd8;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.theme img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.theme h3 {
+  color: #874b60;
+  margin: 12px;
+}
+
+.theme p {
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+#result {
+  display: none;
+  line-height: 1.9;
+}
+
+#result h3 {
+  color: #874b60;
+  margin: 12px 0;
+}
+
+.checklist label {
+  font-weight: normal;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.checklist input {
+  width: auto;
+}
+
+footer {
+  background: #6e394b;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  line-height: 1.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>💍 Wedora</h1>
+  <p>Your Dream Wedding, Beautifully Planned</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#themes">Themes</a>
+  <a href="#planner">Planner</a>
+  <a href="#checklist">Checklist</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Plan Your Dream Wedding</h2>
+  <p>
+    Every love story deserves a beautiful celebration.
+    Let's make your special day unforgettable!
+  </p>
+  <button onclick="document.getElementById('planner').scrollIntoView({behavior:'smooth'})">
+    Start Planning ❤️
+  </button>
+</section>
+
+<section class="container" id="themes">
+  <h2 class="heading">Choose Your Wedding Theme</h2>
+
+  <div class="grid">
+
+    <div class="theme">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500" alt="Floral wedding">
+      <h3>Floral Wedding</h3>
+      <p>Beautiful flowers and romantic decorations.</p>
+    </div>
+
+    <div class="theme">
+      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500" alt="Luxury wedding">
+      <h3>Luxury Wedding</h3>
+      <p>Elegant decorations and grand celebrations.</p>
+    </div>
+
+    <div class="theme">
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=500" alt="Traditional wedding">
+      <h3>Traditional Wedding</h3>
+      <p>Celebrate beautiful cultural traditions.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="container" id="planner">
+  <h2 class="heading">Create Your Wedding Plan 💗</h2>
+
+  <div class="card">
+    <form id="weddingForm">
+
+      <label>Bride's Name</label>
+      <input id="bride" placeholder="Enter bride's name" required>
+
+      <label>Groom's Name</label>
+      <input id="groom" placeholder="Enter groom's name" required>
+
+      <label>Wedding Date</label>
+      <input id="date" type="date" required>
+
+      <label>Wedding Venue</label>
+      <select id="venue">
+        <option>Banquet Hall</option>
+        <option>Outdoor Garden</option>
+        <option>Beach Venue</option>
+        <option>Resort</option>
+        <option>Traditional Marriage Hall</option>
+      </select>
+
+      <label>Expected Guests</label>
+      <input id="guests" type="number" min="1" placeholder="Number of guests" required>
+
+      <label>Wedding Budget (₹)</label>
+      <input id="budget" type="number" min="1" placeholder="Enter your budget" required>
+
+      <label>Wedding Theme</label>
+      <select id="theme">
+        <option>Floral Wedding</option>
+        <option>Luxury Wedding</option>
+        <option>Traditional Wedding</option>
+        <option>Minimal Wedding</option>
+        <option>Royal Wedding</option>
+      </select>
+
+      <button class="full" type="submit">
+        Generate My Wedding Plan ✨
+      </button>
+
+    </form>
+  </div>
+
+  <div class="card" id="result">
+    <h2>Your Wedding Plan 💍</h2>
+    <div id="details"></div>
+    <button onclick="window.print()">Print Plan</button>
+  </div>
+</section>
+
+<section class="container" id="checklist">
+  <h2 class="heading">Wedding Checklist ✅</h2>
+
+  <div class="card checklist">
+    <label><input type="checkbox"> Book wedding venue</label>
+    <label><input type="checkbox"> Select wedding outfits</label>
+    <label><input type="checkbox"> Choose decorations</label>
+    <label><input type="checkbox"> Prepare guest list</label>
+    <label><input type="checkbox"> Send invitations</label>
+    <label><input type="checkbox"> Arrange catering</label>
+    <label><input type="checkbox"> Book photographer</label>
+    <label><input type="checkbox"> Arrange music and entertainment</label>
+    <label><input type="checkbox"> Confirm wedding arrangements</label>
+  </div>
+</section>
+
+<footer>
+  <h2>Wedora 💍</h2>
+  <p>Making Your Dream Wedding Come True.</p>
+  <p>PromptWars Challenge 51 | 2026</p>
+</footer>
+
+<script>
+document.getElementById("weddingForm")
+.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const bride = document.getElementById("bride").value;
+  const groom = document.getElementById("groom").value;
+  const date = document.getElementById("date").value;
+  const venue = document.getElementById("venue").value;
+  const guests = Number(document.getElementById("guests").value);
+  const budget = Number(document.getElementById("budget").value);
+  const theme = document.getElementById("theme").value;
+
+  const venueCost = budget * 0.25;
+  const foodCost = budget * 0.35;
+  const decorationCost = budget * 0.20;
+  const photographyCost = budget * 0.10;
+  const otherCost = budget * 0.10;
+
+  document.getElementById("details").innerHTML = `
+    <h3>Congratulations ${bride} & ${groom}! ❤️</h3>
+    <p><b>Wedding Date:</b> ${date}</p>
+    <p><b>Venue:</b> ${venue}</p>
+    <p><b>Expected Guests:</b> ${guests}</p>
+    <p><b>Theme:</b> ${theme}</p>
+    <p><b>Total Budget:</b> ₹${budget.toLocaleString("en-IN")}</p>
+
+    <h3>Suggested Budget Distribution</h3>
+    <p>Venue: ₹${venueCost.toLocaleString("en-IN")}</p>
+    <p>Catering: ₹${foodCost.toLocaleString("en-IN")}</p>
+    <p>Decoration: ₹${decorationCost.toLocaleString("en-IN")}</p>
+    <p>Photography: ₹${photographyCost.toLocaleString("en-IN")}</p>
+    <p>Other Expenses: ₹${otherCost.toLocaleString("en-IN")}</p>
+
+    <h3>Wedding Planning Tips ✨</h3>
+    <ul>
+      <li>Confirm the venue and guest arrangements.</li>
+      <li>Book catering and photography early.</li>
+      <li>Finalize wedding outfits and decorations.</li>
+      <li>Keep some money for unexpected expenses.</li>
+    </ul>
+
+    <h3>Best Wishes! 💐</h3>
+    Your beautiful celebration starts here!
+  `;
+
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").scrollIntoView({behavior:"smooth"});
+});
+</script>
+
+</body>
+</html>
