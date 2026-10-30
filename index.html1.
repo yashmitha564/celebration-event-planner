@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shubh Vivah | Indian Wedding Planner</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff8ed;
+    color: #54251e;
+}
+
+header {
+    background: #7b171d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 34px;
+}
+
+nav {
+    background: #e9bd76;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #651b1b;
+    text-decoration: none;
+    margin: 12px;
+    font-weight: bold;
+}
+
+.hero {
+    min-height: 420px;
+    background:
+    linear-gradient(#3b120b66, #3b120b66),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1400")
+    center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background: #e9bd76;
+    color: #651b1b;
+    padding: 13px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+section {
+    padding: 55px 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: #8b2025;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    width: 260px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #00000015;
+}
+
+.card h3 {
+    color: #a52a2a;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+.services {
+    background: #f7e7d2;
+}
+
+.checklist {
+    max-width: 450px;
+    margin: auto;
+    text-align: left;
+    line-height: 2.5;
+}
+
+.invitation {
+    background: #7b171d;
+    color: white;
+}
+
+.invitation h2 {
+    color: #f3ce91;
+}
+
+footer {
+    background: #3e1515;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+@media(max-width:600px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🪷 Shubh Vivah 🪷</h1>
+    <p>Your Dream Indian Wedding Planner</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#services">Services</a>
+    <a href="#planning">Planning</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+    <h2>A Celebration of Love</h2>
+    <p>Tradition, Culture and Beautiful Memories</p>
+    <a href="#events" class="btn">Explore Wedding Events</a>
+</div>
+
+<section id="events">
+    <h2>Our Wedding Ceremonies</h2>
+
+    <div class="events">
+
+        <div class="card">
+            <h3>🌼 Haldi Ceremony</h3>
+            <p>A beautiful yellow-themed celebration
+            filled with happiness and blessings.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌿 Mehendi Ceremony</h3>
+            <p>Celebrate love with beautiful henna,
+            music and traditional decorations.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎶 Sangeet Night</h3>
+            <p>An evening of dance, music and
+            unforgettable family moments.</p>
+        </div>
+
+        <div class="card">
+            <h3>💍 Wedding Day</h3>
+            <p>A magical day filled with rituals,
+            blessings and lifelong memories.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎉 Reception</h3>
+            <p>A grand celebration with elegant
+            decorations and delicious food.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="services" id="services">
+    <h2>Our Wedding Services</h2>
+
+    <div class="events">
+
+        <div class="card">
+            <h3>🌺 Decorations</h3>
+            <p>Traditional flowers, mandap and
+            beautiful stage decorations.</p>
+        </div>
+
+        <div class="card">
+            <h3>🍽️ Catering</h3>
+            <p>Delicious traditional Indian food
+            and wedding refreshments.</p>
+        </div>
+
+        <div class="card">
+            <h3>📸 Photography</h3>
+            <p>Capture every special moment
+            of your wedding celebration.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="planning">
+    <h2>Wedding Planning Checklist</h2>
+
+    <div class="checklist">
+        <label><input type="checkbox"> Select wedding venue</label><br>
+        <label><input type="checkbox"> Finalize wedding date</label><br>
+        <label><input type="checkbox"> Book caterers</label><br>
+        <label><input type="checkbox"> Arrange decorations</label><br>
+        <label><input type="checkbox"> Send invitations</label><br>
+        <label><input type="checkbox"> Book photographer</label><br>
+        <label><input type="checkbox"> Plan wedding ceremonies</label>
+    </div>
+</section>
+
+<section class="invitation" id="contact">
+    <h2>💌 You're Invited!</h2>
+    <p>Let's make your special day unforgettable.</p>
+    <br>
+    <a href="mailto:yourmail@example.com" class="btn">
+        Contact Our Planner
+    </a>
+</section>
+
+<footer>
+    <p>🪷 Shubh Vivah – Traditional Indian Wedding Planner</p>
+    <p>Made with ❤️ for Beautiful Beginnings</p>
+</footer>
+
+</body>
+</html>
+
